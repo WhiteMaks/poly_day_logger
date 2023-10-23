@@ -84,7 +84,7 @@ func (logger *Gelf) GetLevel() Level {
 }
 
 func (logger *Gelf) sendMessage(message string) {
-	logger.conn.Write([]byte(message + "\n"))
+	logger.conn.Write([]byte(message + string(byte(0))))
 }
 
 func (logger *Gelf) getMessage(message any) string {
